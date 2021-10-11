@@ -1,0 +1,60 @@
+/*Paramètre de la page*/
+
+body 
+{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+#page_a4
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 297mm;
+    width: 210mm;
+    border: 1px solid black;
+    padding: 2.5cm;
+}
+h1
+{
+    color: red;
+    text-align: center;
+}
+span
+{
+    font-weight: bold;
+}
+
+/*Stylisation de l'en-tête*/
+
+header
+{
+    display: flex;
+}
+header figure img
+{
+    height: 200px;
+    width: auto;
+    border: none solid black;
+    border-radius: 100%;
+    box-shadow:  inset 0.5px 0.1px 1em black;
+}
+header figure
+{
+    display: flex;
+}
+footer
+{
+    display: flex;
+    justify-content: space-around;
+}
+footer a
+{
+    text-decoration: none;
+    color: black;
+}
+footer a:hover
+{
+    color: black;
+}
