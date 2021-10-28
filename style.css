@@ -1,6 +1,64 @@
-/*Paramètre de la page*/
+/*Style du corp de la page*/
 
-body 
+body
+{
+    margin: 1em;
+    font-family: "Indie Flower", Arial, Helvetica, sans-serif;
+    background-color: #C2893b;
+}
+header
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+section
+{
+    font-size: 1.5rem;
+}
+
+.portes_carte
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 45rem;
+}
+.carte
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.1rem solid black;
+    border-radius: 5rem;
+    width: 30rem;
+    height: 20rem;
+}
+.carte p
+{
+    font-size: 1.3rem;
+    width: 25rem;
+}
+footer nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 5rem;
+    margin: 0 20rem;
+}
+footer a
+{
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* Paramètre de la page */
+
+/* body 
 {
     display: flex;
     justify-content: center;
@@ -24,11 +82,11 @@ h1
 span
 {
     font-weight: bold;
-}
+} */
 
 /*Stylisation de l'en-tête*/
 
-header
+/* header
 {
     display: flex;
 }
@@ -57,4 +115,4 @@ footer a
 footer a:hover
 {
     color: black;
-}
+} */
