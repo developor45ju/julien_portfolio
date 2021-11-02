@@ -33,13 +33,17 @@ section
     align-items: center;
     border: 0.1rem solid black;
     border-radius: 5rem;
-    width: 30rem;
-    height: 20rem;
+    width: 31%;
+    height: 45%;
+}
+.carte h3
+{
+    font-size: 1.3rem;
 }
 .carte p
 {
-    font-size: 1.3rem;
-    width: 25rem;
+    font-size: 1.09rem;
+    width: 95%;
 }
 footer nav
 {
@@ -47,13 +51,65 @@ footer nav
     justify-content: space-between;
     align-items: flex-end;
     height: 5rem;
-    margin: 0 20rem;
+    margin: 0 5%;
 }
 footer a
 {
     color: black;
     font-size: 2rem;
     text-decoration: none;
+}
+
+/* Adaptation des supports tablettes */
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 1023px)
+{
+    /* stylisation de la section de la page */
+
+    .portes_carte
+    {
+        display: flex;
+        flex-direction: row;
+        height: 80rem;
+    }
+    .carte
+    {
+        width: 45%;
+        height: 29%;
+    }
+    .carte h3 
+    {
+        font-size: 50%;
+    }
+}
+
+/* Adaptation des supports mobiles */
+
+@media only screen and (min-device-width: 280px) and (max-device-width: 599px)
+{
+    .portes_carte
+    {
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100rem;
+    }
+    .carte
+    {
+        width: 100%;
+        height: 15%;
+    }
+    .carte h3
+    {
+        font-size: 70%;
+    }
+    .carte p
+    {
+        font-size: 55%;
+    }
+    footer
+    {
+        visibility: hidden;
+    }
 }
 
 /* Paramètre de la page */
