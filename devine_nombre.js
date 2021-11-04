@@ -38,13 +38,12 @@ function checkGuess() {
             lowOrHi.textContent = 'Le nombre saisi est trop grand !';
         }
     }
-
     guessCount++;
     guessField.value = '';
     guessField.focus();
-
-    guessSubmit.addEventListener('click', checkGuess);
 }
+
+guessSubmit.addEventListener('click', checkGuess);
 
 // Fonction qui désactive la saissie du formulaire et l'appuie du boutton et qui demande au joueur si il faut faire une nouvelle partie
 
