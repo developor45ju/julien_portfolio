@@ -1,3 +1,5 @@
+// Initialisation de varible sur des id + génération de nombre aléatoirement
+
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 
 let guesses = document.querySelector('.guesses');
@@ -10,37 +12,41 @@ let guessField = document.querySelector('.guessField');
 let guessCount = 1;
 let resetButton;
 
+// Fonction pour vérifier les propotions précédentes + si le nombre est correct, inférieur ou supérieur
+
 function checkGuess() {
-let userGuess = Number(guessField.value);
-if (guessCount === 1) {
-    guesses.textContent = 'Propositions précédentes : ';
-}
-guesses.textContent += userGuess + ' ';
-
-if (userGuess === randomNumber) {
-    lastResult.textContent = 'Bravo, vous avez trouvé le nombre !';
-    lastResult.style.backgroundColor = 'green';
-    lowOrHi.textContent = '';
-    setGameOver();
-} else if (guessCount === 10) {
-    lastResult.textContent = '!!! PERDU !!!';
-    setGameOver();
-} else {
-    lastResult.textContent = 'Faux !';
-    lastResult.style.backgroundColor = 'red';
-    if (userGuess < randomNumber) {
-        lowOrHi.textContent = 'Le nombre saisi est trop petit !';
-    } else if (userGuess > randomNumber) {
-        lowOrHi.textContent = 'Le nombre saisi est trop grand !';
+    let userGuess = Number(guessField.value);
+    if (guessCount === 1) {
+        guesses.textContent = 'Propositions précédentes : ';
     }
+    guesses.textContent += userGuess + ' ';
+
+    if (userGuess === randomNumber) {
+        lastResult.textContent = 'Bravo, vous avez trouvé le nombre !';
+        lastResult.style.backgroundColor = 'green';
+        lowOrHi.textContent = '';
+        setGameOver();
+    } else if (guessCount === 10) {
+        lastResult.textContent = '!!! PERDU !!!';
+        setGameOver();
+    } else {
+        lastResult.textContent = 'Faux !';
+        lastResult.style.backgroundColor = 'red';
+        if (userGuess < randomNumber) {
+            lowOrHi.textContent = 'Le nombre saisi est trop petit !';
+        } else if (userGuess > randomNumber) {
+            lowOrHi.textContent = 'Le nombre saisi est trop grand !';
+        }
+    }
+
+    guessCount++;
+    guessField.value = '';
+    guessField.focus();
+
+    guessSubmit.addEventListener('click', checkGuess);
 }
 
-guessCount++;
-guessField.value = '';
-guessField.focus();
-
-guessSubmit.addEventListener('click', checkGuess);
-}
+// Fonction qui désactive la saissie du formulaire et l'appuie du boutton et qui demande au joueur si il faut faire une nouvelle partie
 
 function setGameOver() {
     guessField.disabled = true;
@@ -50,6 +56,8 @@ function setGameOver() {
     document.body.appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
+
+// Fonction qui réinitialise les le jeu quand on recommence une nouvelle partie
 
 function resetGame() {
     guessCount = 1;
@@ -70,4 +78,3 @@ function resetGame() {
 
     randomNumber = Math.floor(Math.random() * 100) + 1;
 }
-
